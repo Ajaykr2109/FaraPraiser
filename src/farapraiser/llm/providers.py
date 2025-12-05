@@ -53,7 +53,7 @@ class OllamaProvider(LLMProvider):
         try:
             response = requests.get(f"{self.base_url}/api/tags", timeout=5)
             return response.status_code == 200
-        except requests.RequestException:
+        except Exception:
             return False
     
     def paraphrase(self, text: str, tone: str = "formal", num_variants: int = 3) -> List[str]:
@@ -86,7 +86,7 @@ class OllamaProvider(LLMProvider):
                     if paraphrased:
                         variants.append(paraphrased)
                         
-            except requests.RequestException as e:
+            except Exception as e:
                 print(f"Error generating variant {i+1}: {e}")
                 continue
         
@@ -107,7 +107,7 @@ class LMStudioProvider(LLMProvider):
         try:
             response = requests.get(f"{self.base_url}/models", timeout=5)
             return response.status_code == 200
-        except requests.RequestException:
+        except Exception:
             return False
     
     def paraphrase(self, text: str, tone: str = "formal", num_variants: int = 3) -> List[str]:
@@ -142,7 +142,7 @@ class LMStudioProvider(LLMProvider):
                         if paraphrased:
                             variants.append(paraphrased)
                             
-            except requests.RequestException as e:
+            except Exception as e:
                 print(f"Error generating variant {i+1}: {e}")
                 continue
         
