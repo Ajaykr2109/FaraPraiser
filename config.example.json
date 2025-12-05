@@ -1,0 +1,26 @@
+{
+  "llm": {
+    "provider": "ollama",
+    "ollama_url": "http://localhost:11434",
+    "lmstudio_url": "http://localhost:1234/v1",
+    "model": "auto",
+    "timeout": 60,
+    "max_tokens": 1024
+  },
+  "ui": {
+    "theme": "light",
+    "font_size": 11,
+    "max_variants": 5
+  },
+  "export": {
+    "default_format": "docx",
+    "include_metadata": true
+  },
+  "tones": [
+    "formal",
+    "academic",
+    "casual",
+    "technical",
+    "simplified"
+  ]
+}
